@@ -38,4 +38,4 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/sampleapp:${{ env.TAG }}
 
       - name: Test
-        run: docker run --rm sampleapp:${{ env.TAG }} test
+        run: docker run --rm ${{ secrets.DOCKERHUB_USERNAME }}/sampleapp:${{ env.TAG }} test
