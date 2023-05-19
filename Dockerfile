@@ -1,5 +1,7 @@
 FROM python:3.9-slim
 
+ENV PYTHONUNBUFFERED=1
+
 RUN apt-get update && apt-get install -y \
     --no-install-recommends gcc \
     python3.9-dev \
@@ -10,4 +12,4 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT [ "python", "manage.py"]
+EXPOSE 8000
