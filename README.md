@@ -87,3 +87,7 @@ task down
 ```shell
 task migrate
 ```
+Получить веб страницу сервера:
+```shell
+task test-server
+```
