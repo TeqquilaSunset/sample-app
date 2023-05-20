@@ -35,7 +35,5 @@ jobs:
           push: ${{ env.PUSH }}
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/sampleapp:${{ env.TAG }}
       
-      - name: Print Images
-        run: docker images
       - name: Test
-        run: docker run --rm ${{ secrets.DOCKERHUB_USERNAME }}/sampleapp:${{ env.TAG }} test
+        run: docker run --rm ${{ secrets.DOCKERHUB_USERNAME }}/sampleapp:${{ env.TAG }} python manage.py test
