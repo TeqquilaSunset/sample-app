@@ -87,6 +87,7 @@ task down
 ```shell
 task migrate
 ```
+### Проверка работы сервера
 Получить веб страницу сервера:
 ```shell
 task test-server
