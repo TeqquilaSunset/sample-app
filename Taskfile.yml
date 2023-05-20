@@ -3,7 +3,7 @@ version: '3'
 tasks:
   docker-build:
     cmds:
-      - docker build -t sampleapp:latest .
+      - docker build -t sampleapp:$(date +%Y%m%d%H%M%S)  .
   docker-run:
     cmds:
       - docker run -it --rm sampleapp:latest
