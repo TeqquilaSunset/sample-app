@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sampleapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sampleapp
+  template:
+    metadata:
+      labels:
+        app: sampleapp
+    spec:
+      containers:
+        - name: sampleapp
+          image: elponcho/sampleapp:v1.0.0
+          command: ["gunicorn", "--bind", "0.0.0.0:8000", "sampleproject.wsgi"]
+          ports:
+            - containerPort: 8000

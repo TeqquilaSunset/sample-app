@@ -1,0 +1,13 @@
+resources:
+  - deployment.yml
+  - service.yml
+  - postgres-deployment.yml
+  - postgres-service.yml
+  - migrate-deployment.yml
+
+images:
+  - name: elponcho/sampleapp
+    newTag: v1.0.0
+
+# patchesStrategicMerge:
+#   - patch-deployment.yml
