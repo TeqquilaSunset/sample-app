@@ -20,4 +20,3 @@ spec:
     - hosts:
       - vbystr.dacdevops.ru
       secretName: vbystr-cert
-      #ghhghgghgh
