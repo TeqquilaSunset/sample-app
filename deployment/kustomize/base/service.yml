@@ -15,5 +15,3 @@ spec:
       port: 443
       targetPort: 8000
   type: LoadBalancer
-  # tls:
-  #   - secretName: sampleapp-tls

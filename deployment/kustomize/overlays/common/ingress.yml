@@ -15,8 +15,8 @@ spec:
               service:
                 name: sampleapp-service
                 port:
-                  number: 80
+                  name: http
   tls:
     - hosts:
       - vbystr.dacdevops.ru
-      secretName: sampleapp-tls
+      secretName: vbystr-cert
