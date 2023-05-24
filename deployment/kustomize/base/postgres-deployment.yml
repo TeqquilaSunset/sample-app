@@ -17,10 +17,15 @@ spec:
           image: postgres
           env:
             - name: POSTGRES_USER
-              value: sampleuser
+              value: postgres
             - name: POSTGRES_PASSWORD
               value: samplepassword
             - name: POSTGRES_DB
               value: sampledb
           ports:
             - containerPort: 5432
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: db
+      volumes:
+        - name: db

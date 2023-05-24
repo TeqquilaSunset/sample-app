@@ -14,7 +14,10 @@ spec:
     spec:
       containers:
         - name: sampleapp
-          image: elponcho/sampleapp:v1.0.0
+          image: elponcho/sampleapp:main
           command: ["gunicorn", "--bind", "0.0.0.0:8000", "sampleproject.wsgi"]
           ports:
             - containerPort: 8000
+          env:
+            - name: DATABASE_URL
+              value: "postgres://postgres:samplepassword@postgres-service/postgres"

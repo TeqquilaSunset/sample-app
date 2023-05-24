@@ -7,7 +7,7 @@ resources:
 
 images:
   - name: elponcho/sampleapp
-    newTag: v1.0.0
+    newTag: main
 
 # patchesStrategicMerge:
 #   - patch-deployment.yml
