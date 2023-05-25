@@ -12,12 +12,21 @@ spec:
       labels:
         app: sampleapp
     spec:
+      initContainers:
+        - name: sampleapp-migrate
+          image: elponcho/sampleapp:main
+          command: ["python", "manage.py", "migrate"]
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - secretRef:
+                name: sampleapp-secret
       containers:
         - name: sampleapp
-          image: elponcho/sampleapp:v1.2.0
+          image: elponcho/sampleapp:main
           command: ["gunicorn", "--bind", "0.0.0.0:8000", "sampleproject.wsgi"]
           ports:
             - containerPort: 8000
-          env:
-            - name: DATABASE_URL
-              value: "postgres://postgres:samplepassword@postgres-service/postgres"
+          envFrom:
+            - secretRef:
+                name: sampleapp-secret

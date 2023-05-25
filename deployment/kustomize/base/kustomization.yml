@@ -3,11 +3,11 @@ resources:
   - service.yml
   - postgres-deployment.yml
   - postgres-service.yml
-  - migrate-deployment.yml
+  - secret.yml
 
 images:
   - name: elponcho/sampleapp
-    newTag: v1.2.0
+    newTag: main
 
 # patchesStrategicMerge:
 #   - patch-deployment.yml

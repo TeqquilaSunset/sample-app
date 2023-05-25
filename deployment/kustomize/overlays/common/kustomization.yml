@@ -7,7 +7,7 @@ images:
     newName: nginx
     newTag: 1.23.2-alpine
   - name: elponcho/sampleapp
-    newTag: v1.2.0
+    newTag: main
 
 resources:
 - ../../base
